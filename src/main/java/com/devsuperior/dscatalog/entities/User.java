@@ -39,7 +39,7 @@ public class User implements Serializable {
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant updatedAt;
 	
-	@ManyToMany(fetch = FetchType.EAGER) //User carrega os roles no metodo EAGER 
+	@ManyToMany(fetch = FetchType.EAGER) //(User metodo EAGER) Carrega uma lista de roles pendurado no user. 
 	@JoinTable(name = "tb_user_role",
 		joinColumns = @JoinColumn(name = "user_id"),
 		inverseJoinColumns = @JoinColumn(name = "role_id"))	
